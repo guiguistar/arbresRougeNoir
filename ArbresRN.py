@@ -31,7 +31,7 @@ class NoeudRN:
         - fd = noeud vide
      - la racine ait:
         - valeur différente de None
-        - parent = noeud vide
+        - parent = None
 
     Remarques:
        - tous les noeuds non vides ont deux fils, quitte à rajouter un
