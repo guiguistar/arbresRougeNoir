@@ -18,9 +18,16 @@ class ArbreGraphique:
 
         print('Résolution: {} x {}'.format(self.largeurEcran,
                                            self.hauteurEcran))
+
+        # Approfondir les réglages de la géométrie
+        self.coeffDimensionsX = 1
+        self.coeffDimensionsY = 0.88
+        self.canvasPad = 5
+        self.XPad = 0
+        self.YPad = 0
         
-        self.largeurCanvas = 4 / 5 * self.largeurEcran
-        self.hauteurCanvas = 4 / 5 * self.hauteurEcran
+        self.largeurCanvas = self.coeffDimensionsX * self.largeurEcran - self.XPad
+        self.hauteurCanvas = self.coeffDimensionsY * self.hauteurEcran - self.YPad
         
         # L'arbre sous-jacent
         self.arbre = ArbresRN.NoeudRN()
@@ -42,7 +49,7 @@ class ArbreGraphique:
                              height=self.hauteurCanvas,
                              background=bleu,
                              highlightbackground=bleu)
-        self.canvas.pack(padx=5,pady=5)
+        self.canvas.pack(padx=self.canvasPad,pady=self.canvasPad)
 
 
         # Le champ de saisie de la valeur à insérer dans l'arbre
